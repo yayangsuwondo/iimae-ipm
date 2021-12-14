@@ -1,0 +1,136 @@
+.lingkaran{
+	padding-left: 120px;
+	margin: 30px;
+}
+.lingkaran2{
+	padding-left: 300px;
+	margin: 30px;
+}
+
+
+.bulat1{
+	background: #b1bebe;
+	padding: 80px;
+	width: 80px;
+	float: left;
+	margin: 10px;
+	height: 50px;
+	border-radius: 50%;
+}
+.bulat2{
+	background-color: #b1bebe;
+	padding: 80px;
+	width: 80px;
+	float: left;
+	margin: 10px;
+	height: 50px;
+	border-radius: 50%;
+}
+.bulat3{
+	background: #b1bebe;
+	padding:80px;
+	width: 80px;
+	float: left;
+	margin: 10px;
+	height: 50px;
+	border-radius: 50%;
+}.bulat4{
+	background: #b1bebe;
+	padding: 80px;
+	width: 80px;
+	float: left;
+	margin: 10px;
+	height: 50px;
+	border-radius: 50%;
+}.bulat5{
+	background: #b1bebe;
+	padding: 80px;
+	width: 80px;
+	float: left;
+	margin: 10px;
+	height: 50px;
+	border-radius: 50%;
+}.bulat6{
+	background: #b1bebe;
+	padding: 80px;
+	width: 80px;
+	float: left;
+	margin: 10px;
+	height: 50px;
+	border-radius: 50%;
+}
+.bulat7{
+	background: #b1bebe;
+	padding: 80px;
+	width: 80px;
+	float: left;
+	margin: 10px;
+	height: 50px;
+	border-radius: 50%;
+}
+.bulat8{
+	background: #b1bebe;
+	padding: 80px;
+	width: 80px;
+	float: left;
+	margin: 10px;
+	height: 50px;
+	border-radius: 50%;
+}
+.bulat9{
+	background: #b1bebe;
+	padding: 80px;
+	width: 80px;
+	float: left;
+	margin: 10px;
+	height: 50px;
+	border-radius: 50%;
+}
+.bulat10 {
+	background: #b1bebe;
+	padding: 80px;
+	width: 80px;
+	float: left;
+	margin: 10px;
+	height: 50px;
+	border-radius: 50%;
+}
+
+.blink_me1 .bulat1{
+	animation: blinker 1s linear infinite;
+}
+.blink_me2 .bulat2{
+	animation: blinker 1s linear infinite;
+}
+.blink_me3 .bulat3{
+	animation: blinker 1s linear infinite;
+}
+.blink_me4 .bulat4{
+	animation: blinker 1s linear infinite;
+}
+.blink_me5 .bulat5{
+	animation: blinker 1s linear infinite;
+}
+.blink_me6 .bulat6{
+	animation: blinker 1s linear infinite;
+}
+.blink_me7 .bulat7{
+	animation: blinker 1s linear infinite;
+}
+.blink_me8 .bulat8{
+	animation: blinker 1s linear infinite;
+}
+.blink_me9 .bulat9{
+	animation: blinker 1s linear infinite;
+}
+.blink_me10 .bulat10{
+  	animation: blinker 1s linear infinite;
+}
+
+ 
+
+  @keyframes blinker {
+	50% {
+	  opacity: 0;
+	}
+  }

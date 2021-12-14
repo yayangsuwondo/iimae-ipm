@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+  <script src="jquery.js" charset="utf-8"></script>
+  <script src="easypiechrat.js" charset="utf-8"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login Form</title>
+  <link rel="stylesheet" href="css.css">
+  <link rel = "stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+  <div class="box">
+    <div class="chart" data-percent="7" >90%</div>
+    <h2>AVA</h2>
+  </div>
+  <div class="box">
+    <div class="chart" data-percent="72" >72%</div>
+    <h2>EFF</h2>
+  </div>
+  <div class="box">
+    <div class="chart" data-percent="81" >81%</div>
+    <h2>QUA</h2>
+  </div>
+ 
+</div>
+
+<script type="text/javascript">
+  $(function() {
+  $('.chart').easyPieChart({
+    size: 160,
+    barColor: "#36e617",
+    scaleLength: 0,
+    lineWidth: 15,
+    trackColor: "#525151",
+    lineCap: "circle",
+    animate: 2000,
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>
+<title>Membuat Bar Chart dengan jQuery dan CSS - Codingan.com</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    barChart();
+
+    $(window).resize(function(){
+        barChart();
+    });
+
+    function barChart(){
+        $('.bar-chart').find('.progress').each(function(){
+            var itemProgress = $(this),
+            itemProgressWidth = $(this).parent().width() * ($(this).data('persen') / 100);
+            itemProgress.css('width', itemProgressWidth);
+        });
+    }
+});
+</script>
+</head>
+<body>
+<div class="container">
+    <h2>Tingkat Keahlian</h2>
+    <div class="bar-chart">
+        <!-- legend label -->
+        <div class="legend">
+            <div class="label">
+                <h4></h4>
+            </div>
+            <div class="label">
+                <h4></h4>
+            </div>
+            <div class="label">
+                <h4></h4>
+            </div>
+            <div class="label last">
+                <h4></h4>
+            </div>
+        </div>
+
+        <!-- bar -->
+        <div class="chart clearfix">
+            <div class="item">
+                <div class="bar">
+                    <span class="persen">85%</span>
+
+                    <div class="progress" data-persen="85">
+                        <span class="title">PENGETAHUAN PHP</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="bar">
+                    <span class="persen">68%</span>
+
+                    <div class="progress" data-persen="68">
+                        <span class="title">PENGETAHUAN MySQL</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="bar">
+                    <span class="persen">59%</span>
+
+                    <div class="progress" data-persen="59">
+                        <span class="title">PENGETAHUAN JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="bar">
+                    <span class="persen">92%</span>
+
+                    <div class="progress" data-persen="91">
+                        <span class="title">PENGETAHUAN HTML&amp;CSS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
