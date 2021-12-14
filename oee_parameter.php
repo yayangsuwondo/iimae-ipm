@@ -278,83 +278,82 @@ Industrial Productivity Measurement
 -->
 
 <?php
-$conn = mysqli_connect("localhost","root","","ipm"); 
 //ambil data dari data tabel
-$result11 = mysqli_query($conn, "SELECT * FROM p1_data_machine_on");
-//$result12 = mysqli_query($conn, "SELECT * FROM p1_data_setup");
-$result13 = mysqli_query($conn, "SELECT * FROM p1_data_run");
-$result14 = mysqli_query($conn, "SELECT * FROM p1_data_normal_break");
-$result15 = mysqli_query($conn, "SELECT * FROM p1_data_breakdown");
-$result16 = mysqli_query($conn, "SELECT * FROM p1_data_qc_call");
-$result17 = mysqli_query($conn, "SELECT * FROM p1_data_product_good");
-$result18 = mysqli_query($conn, "SELECT * FROM p1_data_product_reject");
-$result19 = mysqli_query($conn, "SELECT * FROM p1_data_new_product");
+$result11 = mysqli_query($koneksi, "SELECT * FROM p1_data_machine_on");
+//$result12 = mysqli_query($koneksi, "SELECT * FROM p1_data_setup");
+$result13 = mysqli_query($koneksi, "SELECT * FROM p1_data_run");
+$result14 = mysqli_query($koneksi, "SELECT * FROM p1_data_normal_break");
+$result15 = mysqli_query($koneksi, "SELECT * FROM p1_data_breakdown");
+$result16 = mysqli_query($koneksi, "SELECT * FROM p1_data_qc_call");
+$result17 = mysqli_query($koneksi, "SELECT * FROM p1_data_product_good");
+$result18 = mysqli_query($koneksi, "SELECT * FROM p1_data_product_reject");
+$result19 = mysqli_query($koneksi, "SELECT * FROM p1_data_new_product");
 
 if(isset($_POST['submit']))
 {
 	$date1=$_POST['tgl1'];
 	$date2=$_POST['tgl2'];
 
-$result1 = mysqli_query($conn, "SELECT SUM(selisih) as value_sum from p1_data_machine_on where triggertime > '$date1' and recovertime < '$date2' "); 
+$result1 = mysqli_query($koneksi, "SELECT SUM(selisih) as value_sum from p1_data_machine_on where triggertime > '$date1' and recovertime < '$date2' "); 
 
 $row1    = mysqli_fetch_assoc($result1); 
 $sum1    = $row1['value_sum'];
 
 $sqlResult2 = "SELECT SUM(selisih) as value_sum from p1_data_setup where triggertime > '$date1' and recovertime < '$date2' ";
-$result2 = mysqli_query($conn, $sqlResult2);
+$result2 = mysqli_query($koneksi, $sqlResult2);
 
 $row2    = mysqli_fetch_assoc($result2);
 $sum2    = $row2['value_sum'];
 
-$result3 = mysqli_query($conn, "SELECT SUM(selisih) as value_sum from p1_data_run where triggertime > '$date1' and recovertime < '$date2' "); 
+$result3 = mysqli_query($koneksi, "SELECT SUM(selisih) as value_sum from p1_data_run where triggertime > '$date1' and recovertime < '$date2' "); 
 
 $row3    = mysqli_fetch_assoc($result3); 
 $sum3    = $row3['value_sum'];
 
 
-$result4 = mysqli_query($conn, "SELECT SUM(selisih) as value_sum from p1_data_normal_break where triggertime > '$date1' and recovertime < '$date2' "); 
+$result4 = mysqli_query($koneksi, "SELECT SUM(selisih) as value_sum from p1_data_normal_break where triggertime > '$date1' and recovertime < '$date2' "); 
 
 $row4    = mysqli_fetch_assoc($result4); 
 $sum4    = $row4['value_sum'];
 
 
-$result5 = mysqli_query($conn, "SELECT SUM(selisih) as value_sum from p1_data_breakdown where triggertime > '$date1' and recovertime < '$date2' "); 
+$result5 = mysqli_query($koneksi, "SELECT SUM(selisih) as value_sum from p1_data_breakdown where triggertime > '$date1' and recovertime < '$date2' "); 
 
 $row5    = mysqli_fetch_assoc($result5); 
 $sum5    = $row5['value_sum'];
 
 
-$result6 = mysqli_query($conn, "SELECT SUM(selisih) as value_sum from p1_data_qc_call where triggertime > '$date1' and recovertime < '$date2' "); 
+$result6 = mysqli_query($koneksi, "SELECT SUM(selisih) as value_sum from p1_data_qc_call where triggertime > '$date1' and recovertime < '$date2' "); 
 
 $row6    = mysqli_fetch_assoc($result6); 
 $sum6    = $row6['value_sum'];
 
 $sqlResult7 = "SELECT COUNT(selisih) as value_sum from p1_data_product_good where triggertime > '$date1' and recovertime < '$date2' ";
-$result7 = mysqli_query($conn, $sqlResult7); 
+$result7 = mysqli_query($koneksi, $sqlResult7); 
 
 $row7    = mysqli_fetch_assoc($result7); 
 $sum7    = $row7['value_sum'];
 
 
-$result8 = mysqli_query($conn, "SELECT COUNT(selisih) as value_sum from p1_data_product_reject where triggertime > '$date1' and recovertime < '$date2' "); 
+$result8 = mysqli_query($koneksi, "SELECT COUNT(selisih) as value_sum from p1_data_product_reject where triggertime > '$date1' and recovertime < '$date2' "); 
 
 $row8    = mysqli_fetch_assoc($result8); 
 $sum8    = $row8['value_sum'];
 
-$result9 = mysqli_query($conn, "SELECT COUNT(selisih) as value_sum from p1_data_new_product where triggertime > '$date1' and recovertime < '$date2' "); 
+$result9 = mysqli_query($koneksi, "SELECT COUNT(selisih) as value_sum from p1_data_new_product where triggertime > '$date1' and recovertime < '$date2' "); 
 
 $row9    = mysqli_fetch_assoc($result9); 
 $sum9    = $row9['value_sum'];
 
-$result21  = mysqli_query($conn, "SELECT SUM(selisih) as value_sum from p1_data_idle where triggertime > '$date1' and recovertime < '$date2' "); 
+$result21  = mysqli_query($koneksi, "SELECT SUM(selisih) as value_sum from p1_data_idle where triggertime > '$date1' and recovertime < '$date2' "); 
 $row21    = mysqli_fetch_assoc($result21); 
 $sum21    = $row21['value_sum'];
 
-$result22  = mysqli_query($conn, "SELECT SUM(selisih) as value_sum from p1_data_support_call where triggertime > '$date1' and recovertime < '$date2' "); 
+$result22  = mysqli_query($koneksi, "SELECT SUM(selisih) as value_sum from p1_data_support_call where triggertime > '$date1' and recovertime < '$date2' "); 
 $row22    = mysqli_fetch_assoc($result22); 
 $sum22   = $row22['value_sum'];
 
-$result12 = mysqli_query($conn, "SELECT SUM(selisih) as value_sum from p1_data_setup where triggertime > '$date1' and recovertime < '$date2' "); 
+$result12 = mysqli_query($koneksi, "SELECT SUM(selisih) as value_sum from p1_data_setup where triggertime > '$date1' and recovertime < '$date2' "); 
 
 $row12    = mysqli_fetch_assoc($result12); 
 $sum12    = $row12['value_sum'];
@@ -365,16 +364,16 @@ $sum9 = $sum7 + $sum8;
 
 //Target Product dari halaman input target
 
-$result10 = mysqli_query($conn, "SELECT SUM(jumlah_target) as value_sum FROM data_input_target ORDER BY jumlah_target DESC LIMIT 1"); 
+$result10 = mysqli_query($koneksi, "SELECT SUM(jumlah_target) as value_sum FROM data_input_target ORDER BY jumlah_target DESC LIMIT 1"); 
 $row10    = mysqli_fetch_assoc($result10);
 $sum10    = $row10['value_sum'];
 
 //target produk untuk perhitungan good product
-$result20 = mysqli_query($conn,"SELECT SUM(jumlah_target) as value_sum FROM data_input_target where tanggal between '$date1' and '$date2' "); 
+$result20 = mysqli_query($koneksi,"SELECT SUM(jumlah_target) as value_sum FROM data_input_target where tanggal between '$date1' and '$date2' "); 
 $row11    = mysqli_fetch_assoc($result20);
 $sum11    = $row11['value_sum'];
 //std time
-//$result23 = mysqli_query($conn,"SELECT count(data_std_time) as value_sum FROM p1_data_std_time where tanggal between '$date1' and '$date2' "); 
+//$result23 = mysqli_query($koneksi,"SELECT count(data_std_time) as value_sum FROM p1_data_std_time where tanggal between '$date1' and '$date2' "); 
 //$row23    = mysqli_fetch_assoc($result22);
 //$sum23    = $row23['value_sum'];
 
