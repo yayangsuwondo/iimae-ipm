@@ -1,4 +1,3 @@
 <?php 
-$koneksi= mysqli_connect("localhost","root","");
-mysqli_select_db($koneksi,"admin_login");
+$koneksi= mysqli_connect("localhost","cypr9728","pq6SPaHWYiKe38","cypr9718_ipm");
 ?>  
